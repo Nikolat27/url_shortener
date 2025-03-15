@@ -14,7 +14,7 @@ func main() {
 	}
 	defer db.Close()
 
-	// Run migrations only when the command is "migrate"
+	// Run migrations only when the command is "go run main.go migrate"
 	if len(os.Args) > 1 && os.Args[1] == "migrate" {
 		err = database.RunMigrations(db)
 		if err != nil {
